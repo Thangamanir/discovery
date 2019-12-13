@@ -1,0 +1,52 @@
+[
+  {
+    "name": "test",
+    "type": "jupyter",
+    "problemURL": "https://colab.research.google.com/drive/testFileID",
+    "solutionURL": "https://colab.research.google.com/drive/testFileID",
+    "frozen": 2
+  },
+  {
+    "name": "test",
+    "type": "jupyterInline",
+    "problemURL": "https://colab.research.google.com/drive/testFileID",
+    "solutionURL": "https://colab.research.google.com/drive/testFileID",
+    "code": 1,
+    "frozen": 2
+  },
+  {
+    "name": "test",
+    "type": "youtube",
+    "youtubeURL": "test",
+    "questionAfter": "test"
+  },
+  {
+    "name": "test",
+    "type": "text",
+    "question": "test"
+  },
+  {
+    "name": "test",
+    "type": "jupyter",
+    "problemURL": "https://colab.research.google.com/drive/testFileID",
+    "solutionURL": "https://colab.research.google.com/drive/testFileID",
+    "frozen": 2
+  },
+  {
+    "name": "test",
+    "service": "CodeCombat",
+    "type": "profile"
+  },
+  {
+    "name": "test",
+    "type": "codeCombat",
+    "service": "CodeCombat",
+    "level": "test"
+  },
+  {
+    "count": 1,
+    "name": "test",
+    "service": "CodeCombat",
+    "type": "codeCombatNumber"
+  }
+]

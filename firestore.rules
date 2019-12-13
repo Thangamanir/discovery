@@ -1,0 +1,45 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	match /logged_events/{loggedEventId}{
+      allow read: if request.auth.uid != null;
+      allow write: if request.auth.uid != null 
+      	&& request.auth.uid==request.resource.data.uid;
+      allow create: if request.auth.uid != null 
+      	&& request.auth.uid==request.resource.data.uid;
+      allow update:if request.auth.uid != null 
+      	&& request.auth.uid==request.resource.data.uid;
+    }
+    match /analytics/activityAnalytics/activityAttempts/{attemptId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /activityAnalytics/{attemptId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /path_owners/{ownerId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /customAnalysis/{analysisId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /customAnalysisResponse/{analysisResponseId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /adminCustomAnalysis/{analysisId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /adminCustomAnalysisResponse/{analysisResponseId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+    match /path_statistics/{statId}{
+    	allow read:if request.auth.uid !=null;
+      allow write: if request.auth.uid != null;
+    }
+  }
+}
