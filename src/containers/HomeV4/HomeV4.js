@@ -1,5 +1,6 @@
 import React from "react";
-import AppLogo from "../../assets/NUS_ALSET_Achievements_Logo.png";
+//import AppLogo from "../../assets/NUS_ALSET_Achievements_Logo.png";
+import AppLogo from "../../assets/NUS_Discovery.png";
 import Button from "@material-ui/core/Button";
 import styles from "./HomeV4.module.css";
 

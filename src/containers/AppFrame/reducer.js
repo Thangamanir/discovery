@@ -36,7 +36,7 @@ export const appFrame = (state = initialState, action) => {
         ...state,
         dynamicPathTitle: action.pathname
           ? action.pathname === "/"
-            ? "Achievements"
+            ? "Discovery"
             : action.pathname
                 .replace(/^\//, "")
                 .replace(/\b[a-z]/g, name => name.toUpperCase())

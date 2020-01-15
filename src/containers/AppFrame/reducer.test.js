@@ -81,7 +81,7 @@ describe("AppFrame reducer", () => {
       })
     ).toEqual({
       ...initialState,
-      dynamicPathTitle: "Achievements"
+      dynamicPathTitle: "Discovery"
     });
     expect(
       reducer(undefined, {
