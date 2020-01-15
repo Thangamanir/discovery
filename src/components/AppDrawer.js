@@ -7,8 +7,8 @@ import { compose } from "redux";
 
 import AppDrawerElements from "./AppDrawerElements";
 // import the NUS ALSET Achievements Logo background image
-import AppLogo from "../assets/NUS_ALSET_Achievements_Logo.png";
-
+//import AppLogo from "../assets/NUS_ALSET_Achievements_Logo.png";
+import AppLogo from "../assets/NUS_Discovery.png";
 // from material-ui
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Drawer from "@material-ui/core/Drawer";
