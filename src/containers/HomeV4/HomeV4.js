@@ -103,10 +103,10 @@ function HomePage(props) {
       </section>
       <section className={styles.textContent}>
         <hr style={{ marginTop: "2rem" }} />
-        <h2>Accessing Achievements</h2>
+        <h2>Accessing Discovery</h2>
         <h3>Pricing</h3>
         <p className={styles.endingParagraph}>
-          All the features and course material in Achievements are free for everyone to access.
+          All the features and course material in Discovery are free for everyone to access.
         </p>
         <h3>Guide</h3>
         <p className={styles.endingParagraph}>
@@ -130,7 +130,7 @@ function HomePage(props) {
       </section>
       <section className={styles.textContent}>
         <hr style={{ marginTop: "2rem" }} />
-        <h2>Achievements for educators</h2>
+        <h2>Discovery for educators</h2>
         <h3>Paths and path activities</h3>
         <p>Create your own paths and path activities to share with your students, friends and family.</p>
         <p className={styles.endingParagraph}>
@@ -144,7 +144,7 @@ function HomePage(props) {
         </p>
         <p className={styles.endingParagraph}>Use Cohorts to organise multiple courses.</p>
         <h3>Getting started</h3>
-        <p>Login with your Google account to start educating on Achievements!</p>
+        <p>Login with your Google account to start educating on Discovery!</p>
         <Button
           color="primary"
           size="large"

@@ -47,17 +47,17 @@ function Contribute(props) {
               paragraph
               variant="h6"
             >
-              NUS ALSET Achievements is an open development hosted on GitHub
+              NUS Discovery is an open development hosted on GitHub
             </Typography>
             <p style={{ textAlign: "center" }}>
               <a
-                href="https://travis-ci.org/NUS-ALSET/achievements"
+                href="https://travis-ci.org/Thangamanir/discovery"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <img
                   alt="Build Status"
-                  src="https://travis-ci.org/NUS-ALSET/achievements.svg?branch=master"
+                  src="https://travis-ci.org/Thangamanir/discovery.svg?branch=master"
                 />
               </a>
               &nbsp;
@@ -112,7 +112,7 @@ function Contribute(props) {
               <Grid container justify="center" spacing={16}>
                 <Grid item>
                   <a
-                    href="https://github.com/NUS-ALSET/achievements"
+                    href="https://travis-ci.org/Thangamanir/discovery"
                     rel="noopener noreferrer"
                     target="_blank"
                   >

@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# :star: NUS ALSET Achievements Web App :star:
+# :star: NUS Discovery Web App :star:
 
 [![Build Status](https://travis-ci.org/Thangamanir/discovery.svg?branch=master)](https://travis-ci.org/Thangamanir/discovery)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -20,7 +20,7 @@
 ***
 
 ## Documentations :blue_book:
-Feel free to check out our :sparkles: **[Wiki](https://github.com/NUS-ALSET/achievements/wiki)** for information and resources on both the app usage and development guide:
+Feel free to check out our :sparkles: **[Wiki](https://github.com/Thangamanir/discovery/wiki)** for information and resources on both the app usage and development guide:
 - For teachers/students  
   - [User Manual](https://github.com/Thangamanir/discovery/wiki/User-Manual)  
   - [Custom Activity](http://bit.ly/customActivity_ALSET)
