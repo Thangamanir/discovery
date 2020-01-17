@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nus-discovery-dev.firebaseio.com/#/home" target="_blank" rel="noopener noreferrer">
-    <img width="530" src="https://github.com/Thangamanir/discovery/src/assets/NUS_Discovery.png">
+    <img width="530" src="https://github.com/Thangamanir/discovery/blob/master/src/assets/NUS_Discovery.png">
   </a>
 </p>
 
