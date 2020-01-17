@@ -112,7 +112,7 @@ function Contribute(props) {
               <Grid container justify="center" spacing={16}>
                 <Grid item>
                   <a
-                    href="https://travis-ci.org/Thangamanir/discovery"
+                    href="https://github.com/Thangamanir/discovery"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
