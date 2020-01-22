@@ -13,14 +13,14 @@ done
 
 if [[ $# -eq 0 ]]; then
   echo "hosting will be deployed"
-  firebase deploy --token "$FIREBASE_SECRET" --project "nus-discovery-dev" --only hosting
+  firebase deploy --token "$FIREBASE_SECRET" --project "nus-discovery-prod" --only hosting
   if [ -n "${database}" ]; then
     echo "database will be deployed"
-    firebase deploy --token "$FIREBASE_SECRET" --project "nus-discovery-dev" --only database
+    firebase deploy --token "$FIREBASE_SECRET" --project "nus-discovery-prod" --only database
   fi
   if [ -n "${functions}" ]; then
     echo "functions will be deployed"
-    firebase deploy --token "$FIREBASE_SECRET" --project "nus-discovery-dev" --only functions --force
+    firebase deploy --token "$FIREBASE_SECRET" --project "nus-discovery-prod" --only functions --force
   fi
   exit 0;
 fi
