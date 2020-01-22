@@ -114,11 +114,13 @@ class CustomLocalActivity2 extends React.PureComponent {
       key={block.metadata.achievements.type + block.metadata.achievements.index}
     >
       {block.cell_type === "text" ? (
+        <div style={{textAlign:"left"}}>
         <Markdown
           source={block.source
             .join("\n")
             .replace(/YOUR_USER_TOKEN/g, uid.slice(0, 5))}
         />
+        </div>
       ) : (
         <AceEditor
           maxLines={Infinity}
@@ -188,7 +190,11 @@ class CustomLocalActivity2 extends React.PureComponent {
       "public",
       uid
     );
-    const additionalIntroBlocks = introductoryBlocks.slice(1);
+    console.log("additionalIntroBlocks data validation")
+    const additionalIntroBlocks = introductoryBlocks
+      ? introductoryBlocks.slice(1)
+      : [];
+
     return (
       <Grid container spacing={8} style={{ overflowY: "auto" }}>
         <Grid
@@ -327,10 +333,8 @@ class CustomLocalActivity2 extends React.PureComponent {
             {this.TabPanel({
               value: this.state.tabValue,
               index: "two",
-              children: this.filterBlocks(
-                problem.problemJSON,
-                "shown",
-                uid
+              children: (
+                this.filterBlocks(problem.problemJSON, "shown", uid) || []
               ).map(filteredBlock => this.renderBlock(filteredBlock, uid))
             })}
             {additionalIntroBlocks &&
