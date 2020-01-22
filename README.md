@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://nus-discovery-dev.firebaseio.com/#/home" target="_blank" rel="noopener noreferrer">
+  <a href="https://nus-discovery-prod.firebaseio.com/#/home" target="_blank" rel="noopener noreferrer">
     <img width="530" src="https://github.com/Thangamanir/discovery/blob/master/src/assets/NUS_Discovery.png">
   </a>
 </p>
@@ -15,7 +15,7 @@
 
 
 **An integrated web application for learning and teaching programming:computer:**
-@[https://nus-discovery-dev.firebaseio.com/](https://nus-discovery-dev.firebaseio.com/#/)
+@[https://nus-discovery-prod.firebaseio.com/](https://nus-discovery-prod.firebaseio.com/#/)
 
 ***
 
