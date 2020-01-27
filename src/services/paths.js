@@ -349,27 +349,12 @@ export class PathsService {
       return this.fetchFile(this.getFileId(url));
     }
   }
-  fetchDocuments(url,uid) {
-    return this.fetchDocumentFromGithub(url, uid);
-  }
   fetchNotebookFromGithub(url, uid) {
     return firebaseService
       .startProcess(
         { owner: uid, url: url },
         "notebookFromGitQueue",
         "Fetch Notebook form GitHub"
-      )
-      .then(res => JSON.parse(res.data))
-      .catch(e => {
-        e.error = e.message || "Error occured";
-      });
-  }
-  fetchDocumentFromGithub(url, uid) {
-    return firebaseService
-      .startProcess(
-        { owner: uid, url: url },
-        "documentFromGitQueue",
-        "Fetch Document form GitHub"
       )
       .then(res => JSON.parse(res.data))
       .catch(e => {
@@ -709,29 +694,6 @@ export class PathsService {
       });
     }
   }
-
-  saveDocumentToFirebase(data) {
-    console.log('Saringan1');
-    if (
-      Object.keys(data.json).length > 0 &&
-      data.json.constructor === Object &&
-      data.info.version >= 1
-    ) {
-      console.log('Saringan2');
-
-      const ref = firebase.database().ref(`/DocumentData/${data.key}`);
-      const { path, owner } = data.info;
-      // If JupyterNotebook has uploaded files, store it along with the problem data
-      ref.set({
-        problemData: JSON.stringify(data.json),
-        path,
-        owner,
-        files: data.uploadedFiles || {}
-      });
-    }
-  }
-
-
   /**
    *
    * @param {String} uid
