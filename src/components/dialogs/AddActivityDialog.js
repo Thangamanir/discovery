@@ -520,6 +520,52 @@ class AddActivityDialog extends React.PureComponent {
             </Select>
           </Fragment>
         );
+        case ACTIVITY_TYPES.documentUpload.id:
+        return(
+          <Fragment>
+             <Typography gutterBottom style={{ marginTop: 30 }} variant="body2">
+              Submit the file/images
+            </Typography>
+            <Grid container spacing={8}>
+              <Grid item xs={4}>
+                <input
+                  style={{ display: "none" }}
+                  id="raised-button-file-public"
+                  type="file"
+                  onChange={this.handlePublicUpload}
+                />
+                <label htmlFor="raised-button-file-public">
+                  <Button variant="contained" component="span" color="default">
+                    Upload Document
+                    <CloudUploadIcon />
+                  </Button>
+                </label>
+              </Grid>
+              <Grid
+                item
+                xs={8}
+                style={{
+                  color: "green",
+                  display: "flex",
+                  alignItems: "center",
+                  visibility: this.state.files ? "visible" : "hidden"
+                }}
+              >
+                <CheckIcon />
+                {this.state.files && this.state.files.name}
+                &nbsp;&nbsp;
+                <Fab
+                  size="small"
+                  style={{ marginLeft: "5px" }}
+                  aria-label="Delete"
+                  onClick={this.onDelete}
+                >
+                  <DeleteIcon />
+                </Fab>
+              </Grid>
+            </Grid>
+          </Fragment>
+        );
       case ACTIVITY_TYPES.jupyterInline.id:
         return (
           <Fragment>

@@ -99,6 +99,10 @@ export const ACTIVITY_TYPES = {
   educator: {
     id: "educator",
     caption: "Educator"
+  },
+  documentUpload: {
+    id: "documentUpload",
+    caption: "Upload Documents"
   }
   // thirdPartyServices: {
   //   id: "thirdPartyServices",
@@ -534,6 +538,9 @@ export class PathsService {
       case ACTIVITY_TYPES.educator.id:
         if (!problemInfo.targetType) throw new Error("Missing Target Type");
         break;
+      case ACTIVITY_TYPES.documentUpload.id:
+        if (!problemInfo.files) throw new Error("Missing Files");
+        break;
       default:
         throw new Error("Invalid activity type");
     }
@@ -545,7 +552,6 @@ export class PathsService {
     let solutionURL = null;
     let problemURL = null;
     let uploadedFiles = undefined;
-
     this.validateProblem(problemInfo);
     if (
       [ACTIVITY_TYPES.jupyter.id, ACTIVITY_TYPES.jupyterInline.id].includes(
@@ -557,8 +563,15 @@ export class PathsService {
       uploadedFiles = problemInfo.files;
       delete problemInfo.solutionURL;
     }
+    let documentFiles = [];
+    if(problemInfo.type === "documentUpload" )
+    {
+      documentFiles = problemInfo.files;
+      delete problemInfo.files;
+    }
     problemInfo.owner = uid;
     if (pathId) {
+      console.log(pathId)
       problemInfo.path = pathId;
     }
     /*
@@ -570,8 +583,7 @@ export class PathsService {
       jestFiles = files;
       delete problemInfo.files;
     }
-
-    const key =
+      const key =
       problemInfo.id ||
       firebase
         .database()
@@ -588,10 +600,11 @@ export class PathsService {
       }
       // If the files have been deleted
       // Store info["files"] as null to remove it from firebase activities node
-      if (info.type === "jupyterInline" && problemInfo.files === undefined) {
+      if ((info.type === "jupyterInline" || info.type === "documentUpload") && problemInfo.files === undefined) {
         info["files"] = null;
       }
     }
+    //console.log('Saringan Eye');
     if (info.id) {
       delete info.id;
       next = ref.update(info);
@@ -601,6 +614,8 @@ export class PathsService {
       }
       next = ref.set(info);
     }
+    //console.log(info);
+    //console.log(documentFiles);
     return next
       .then(
         () =>
@@ -621,6 +636,7 @@ export class PathsService {
           );
         }
         if (problemURL) {
+          console.log('Jupiter');
           this.fetchNotebookFiles(solutionURL, uid).then(
             json => {
               uploadedFiles && !uploadedFiles.isEmpty
@@ -635,6 +651,16 @@ export class PathsService {
             err => console.error(err.message)
           );
         }
+        if (documentFiles.length) {
+          const ref = firebase.database().ref(`/documentData/${key}`);
+          const { path, owner } = info;
+          ref.set({
+            files: documentFiles,
+            path,
+            owner
+          });
+        }
+        
         /*
           Update to activityData if Jest Activity
         */
@@ -668,7 +694,6 @@ export class PathsService {
       });
     }
   }
-
   /**
    *
    * @param {String} uid
